@@ -31,7 +31,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
       const response = await signup(formData);
 
       toast.success("Signup successful! Redirecting to dashboard...", {
-        position: "top-right",
+        position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -50,7 +50,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
     } catch (err) {
       setError(err.message || "Registration failed. Username may be taken.");
       toast.error(err.message || "Registration failed", {
-        position: "top-right",
+        position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -64,9 +64,9 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center px-4 py-6 sm:px-6 lg:px-8">
       <ToastContainer
-        position="top-right"
+        position="top-center"
         autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
@@ -78,15 +78,15 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
       />
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-red-600">
+        <h2 className="text-center text-2xl md:text-3xl font-extrabold text-red-600">
           Create your account
         </h2>
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 border-t-4 border-red-500">
+      <div className="mt-6 mx-auto w-full max-w-md">
+        <div className="bg-white py-6 px-4 shadow sm:rounded-lg sm:px-6 border-t-4 border-red-500">
           {error && (
-            <div className="mb-4 bg-red-50 border-l-4 border-red-500 p-4">
+            <div className="mb-4 bg-red-50 border-l-4 border-red-500 p-3">
               <div className="flex">
                 <div className="flex-shrink-0">
                   <svg
@@ -109,7 +109,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
             </div>
           )}
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="firstName"
@@ -126,7 +126,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
                   value={formData.firstName}
                   onChange={handleChange}
                   autoComplete="given-name"
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-500 focus:border-red-500 text-sm sm:text-base"
                 />
               </div>
             </div>
@@ -147,7 +147,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
                   value={formData.lastName}
                   onChange={handleChange}
                   autoComplete="family-name"
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-500 focus:border-red-500 text-sm sm:text-base"
                 />
               </div>
             </div>
@@ -168,7 +168,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
                   value={formData.username}
                   onChange={handleChange}
                   autoComplete="username"
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-500 focus:border-red-500 text-sm sm:text-base"
                 />
               </div>
             </div>
@@ -190,7 +190,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
                   value={formData.password}
                   onChange={handleChange}
                   autoComplete="new-password"
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-500 focus:border-red-500 text-sm sm:text-base"
                 />
               </div>
             </div>
@@ -199,7 +199,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
+                className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm sm:text-base font-medium text-white ${
                   isLoading ? "bg-red-400" : "bg-red-600 hover:bg-red-700"
                 } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500`}
               >
@@ -234,7 +234,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
             </div>
           </form>
 
-          <div className="mt-6">
+          <div className="mt-4">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-300"></div>
@@ -246,10 +246,10 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
               </div>
             </div>
 
-            <div className="mt-6">
+            <div className="mt-4">
               <Link
                 to="/"
-                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-red-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm sm:text-base font-medium text-red-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               >
                 Login
               </Link>
