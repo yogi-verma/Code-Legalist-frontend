@@ -5,6 +5,8 @@ import { toast as toastify } from 'react-toastify';
 import { toast as hotToast } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
 
+const API_BASE_URL = 'https://code-legalist-backend.vercel.app';
+
 const PostForm = ({ username }) => {
   const [formData, setFormData] = useState({ city: '', state: '', description: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,7 +21,7 @@ const PostForm = ({ username }) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('code-legalist-backend.vercel.app/api/posts', {
+      const response = await fetch(`${API_BASE_URL}/api/posts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -4,6 +4,8 @@ import { FiArrowLeft } from 'react-icons/fi';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const API_BASE_URL = 'https://code-legalist-backend.vercel.app';
+
 const Profile = ({ setIsAuthenticated }) => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -21,7 +23,7 @@ const Profile = ({ setIsAuthenticated }) => {
           return;
         }
 
-        const response = await fetch('code-legalist-backend.vercel.app/api/auth/me', {
+        const response = await fetch(`${API_BASE_URL}/api/auth/me`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -46,7 +48,7 @@ const Profile = ({ setIsAuthenticated }) => {
   const handleDeleteAccount = async () => {
     setIsDeleting(true);
     try {
-      const response = await fetch('code-legalist-backend.vercel.app/api/auth/delete-account', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/delete-account`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

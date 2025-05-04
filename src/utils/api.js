@@ -1,8 +1,9 @@
-const API_BASE_URL = 'code-legalist-backend.vercel.app/api/auth';
+const API_BASE_URL = `https://code-legalist-backend.vercel.app`;
+
 
 export const signup = async (formData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/signup`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +31,7 @@ export const signup = async (formData) => {
 
 export const login = async (formData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/login`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +57,7 @@ export const login = async (formData) => {
 
 export const getDashboard = async (token) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/dashboard`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/dashboard`, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${token}`,
@@ -80,7 +81,7 @@ export const getDashboard = async (token) => {
 // Add this to your utils/api.js
 export const getPostsByUsername = async (username) => {
   try {
-    const response = await fetch(`code-legalist-backend.vercel.app/api/posts/user/${username}`, {
+    const response = await fetch(`${API_BASE_URL}/api/posts/user/${username}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`

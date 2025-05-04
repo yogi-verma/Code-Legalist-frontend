@@ -15,6 +15,9 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import img from "../assets/img.png";
 import toast, { Toaster } from "react-hot-toast";
 
+const API_BASE_URL = `https://code-legalist-backend.vercel.app`;
+
+
 const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
   const [userData, setUserData] = useState(null);
   const [posts, setPosts] = useState([]);
@@ -39,7 +42,7 @@ const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
       const userData = await getDashboard(token);
       setUserData(userData.user);
 
-      const response = await fetch("code-legalist-backend.vercel.app/api/posts", {
+      const response = await fetch(`${API_BASE_URL}/api/posts`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -118,7 +121,7 @@ const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
 
   const handleDeleteAccount = async () => {
     try {
-      const res = await fetch("code-legalist-backend.vercel.app/api/auth/delete-account", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/delete-account`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
