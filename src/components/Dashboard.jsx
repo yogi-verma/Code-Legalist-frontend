@@ -11,12 +11,12 @@ import {
   FiX,
   FiArrowLeft,
 } from "react-icons/fi";
+import { CgProfile } from "react-icons/cg";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import img from "../assets/img.png";
 import toast, { Toaster } from "react-hot-toast";
 
 const API_BASE_URL = `https://code-legalist-backend.vercel.app`;
-
 
 const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
   const [userData, setUserData] = useState(null);
@@ -211,15 +211,17 @@ const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
                 <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
                   <FiUser size={20} />
                 </div>
-                {userData && (
-                  <span className="text-gray-700 font-medium">
-                    {userData.firstName} {userData.lastName}
-                  </span>
-                )}
+                
               </button>
 
               {showProfileDropdown && (
                 <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
+                  {userData && (
+                  <span className="flex text-left items-center px-4 py-2 text-sm text-gray-700 font-bold">
+                  <CgProfile  className="mr-2 h-4 w-4" />
+                  {userData.firstName} {userData.lastName}
+                </span>
+                )}
                   <button
                     onClick={handleLogout}
                     className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center"
@@ -485,48 +487,59 @@ const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-500 py-4 bg-gray-100">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center">
-          {/* Left side */}
-          <div className="mb-6 md:mb-0">
-            <h4 className="text-xl font-bold text-gray-800">Chat Legalist</h4>
-            <p className="text-gray-600 mt-2">
-              Providing legal awareness and solutions for everyone
-            </p>
-          </div>
+      <footer className="border-t border-gray-300 py-6 bg-gray-100 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Main footer content */}
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            {/* Left side - Branding */}
+            <div className="text-center md:text-left mb-6 md:mb-0">
+              <h4 className="text-lg sm:text-xl font-bold text-gray-800">
+                Code Legalist
+              </h4>
+              <p className="text-gray-600 mt-1 sm:mt-2 text-sm sm:text-base">
+                Providing legal awareness and solutions for everyone
+              </p>
+            </div>
 
-          {/* Right side */}
-          <div className="text-center md:text-right">
-            <p className="text-gray-700 font-medium mb-2">
-              Follow us on social media
-            </p>
-            <div className="flex justify-center md:justify-end space-x-4 text-red-500">
-              <a
-                href="#"
-                className="hover:text-red-700 transition-colors duration-200"
-              >
-                <FaFacebook size={24} />
-              </a>
-              <a
-                href="#"
-                className="hover:text-red-700 transition-colors duration-200"
-              >
-                <FaTwitter size={24} />
-              </a>
-              <a
-                href="#"
-                className="hover:text-red-700 transition-colors duration-200"
-              >
-                <FaInstagram size={24} />
-              </a>
+            {/* Right side - Social media */}
+            <div className="text-center md:text-right">
+              <p className="text-gray-700 font-medium mb-2 text-sm sm:text-base">
+                Follow us on social media
+              </p>
+              <div className="flex justify-center md:justify-end space-x-4 text-red-500">
+                <a
+                  href="#"
+                  className="hover:text-red-700 transition-colors duration-200"
+                  aria-label="Facebook"
+                >
+                  <FaFacebook size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-red-700 transition-colors duration-200"
+                  aria-label="Twitter"
+                >
+                  <FaTwitter size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-red-700 transition-colors duration-200"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Bottom center */}
-        <p className="mt-5 text-center text-gray-600 text-sm">
-          &copy; 2025 Chat Legalist
-        </p>
+          {/* Copyright */}
+          <div className="mt-6 pt-4 border-t border-gray-200">
+            <p className="text-center text-gray-600 text-xs sm:text-sm">
+              &copy; {new Date().getFullYear()} Chat Legalist. All rights
+              reserved.
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );
