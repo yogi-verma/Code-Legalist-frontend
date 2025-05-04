@@ -16,7 +16,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import img from "../assets/img.png";
 import toast, { Toaster } from "react-hot-toast";
 
-const API_BASE_URL = `https://code-legalist-backend.vercel.app`;
+const API_BASE_URL = "https://code-legalist-backend.vercel.app";
 
 const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
   const [userData, setUserData] = useState(null);
