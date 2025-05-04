@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://code-legalist-backend.vercel.app";
+const API_BASE_URL = "https://code-legalist-backend.onrender.com";
 
 
 export const signup = async (formData) => {
