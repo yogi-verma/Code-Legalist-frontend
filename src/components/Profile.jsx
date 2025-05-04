@@ -21,7 +21,7 @@ const Profile = ({ setIsAuthenticated }) => {
           return;
         }
 
-        const response = await fetch('http://localhost:5000/api/auth/me', {
+        const response = await fetch('code-legalist-backend.vercel.app/api/auth/me', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -46,7 +46,7 @@ const Profile = ({ setIsAuthenticated }) => {
   const handleDeleteAccount = async () => {
     setIsDeleting(true);
     try {
-      const response = await fetch('http://localhost:5000/api/auth/delete-account', {
+      const response = await fetch('code-legalist-backend.vercel.app/api/auth/delete-account', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

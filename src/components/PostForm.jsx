@@ -19,7 +19,7 @@ const PostForm = ({ username }) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/posts', {
+      const response = await fetch('code-legalist-backend.vercel.app/api/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

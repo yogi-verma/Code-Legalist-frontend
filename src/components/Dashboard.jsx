@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, Link, useParams } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { getDashboard, getPostsByUsername } from "../utils/api";
 import {
   FiUser,
@@ -39,7 +39,7 @@ const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
       const userData = await getDashboard(token);
       setUserData(userData.user);
 
-      const response = await fetch("http://localhost:5000/api/posts", {
+      const response = await fetch("code-legalist-backend.vercel.app/api/posts", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -118,7 +118,7 @@ const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
 
   const handleDeleteAccount = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/delete-account", {
+      const res = await fetch("code-legalist-backend.vercel.app/api/auth/delete-account", {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

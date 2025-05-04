@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api/auth';
+const API_BASE_URL = 'code-legalist-backend.vercel.app/api/auth';
 
 export const signup = async (formData) => {
   try {
@@ -80,7 +80,7 @@ export const getDashboard = async (token) => {
 // Add this to your utils/api.js
 export const getPostsByUsername = async (username) => {
   try {
-    const response = await fetch(`http://localhost:5000/api/posts/user/${username}`, {
+    const response = await fetch(`code-legalist-backend.vercel.app/api/posts/user/${username}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
