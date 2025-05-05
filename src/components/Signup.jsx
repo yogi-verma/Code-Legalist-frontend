@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { signup } from "../utils/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Signup = ({ setIsAuthenticated, setToken }) => {
   const [formData, setFormData] = useState({

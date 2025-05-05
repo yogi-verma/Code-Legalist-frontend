@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../utils/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 const Login = ({ setIsAuthenticated, setToken }) => {
   const [formData, setFormData] = useState({
     username: '',
