@@ -322,14 +322,11 @@ const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
         )}
 
         {isLoading ? (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50">
-          <div className="flex space-x-2">
-            <div className="h-4 w-4 bg-red-500 rounded-full animate-pulse"></div>
-            <div className="h-4 w-4 bg-red-500 rounded-full animate-pulse delay-150"></div>
-            <div className="h-4 w-4 bg-red-500 rounded-full animate-pulse delay-300"></div>
-          </div>
-          <span className="ml-4 text-white text-lg font-semibold">Loading data...</span>
-        </div>
+         <div className="fixed inset-0 bg-white/60 backdrop-blur-sm flex justify-center items-center z-50">
+         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-500"></div>
+         <span className="ml-4 text-gray-700 text-lg font-medium">Loading data...</span>
+       </div>
+       
         
         
         
