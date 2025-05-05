@@ -322,10 +322,11 @@ const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
         )}
 
         {isLoading ? (
-          <div className="flex justify-center items-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-500"></div>
-            <span className="ml-4 text-gray-600">Loading data...</span>
-          </div>
+          <div className="fixed inset-0 bg-white/60 backdrop-blur-sm flex justify-center items-center z-50">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-500"></div>
+          <span className="ml-4 text-gray-700 text-lg font-medium">Loading data...</span>
+        </div>
+        
         ) : (
           <>
             <div className="bg-white shadow rounded-lg p-6">
