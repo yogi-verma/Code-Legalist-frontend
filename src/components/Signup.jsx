@@ -194,7 +194,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-300 py-6 bg-gray-100 px-4 sm:px-6">
+      <footer className="border-t border-gray-300 py-4 bg-gray-100 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-6 md:mb-0">
@@ -224,7 +224,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
             </div>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-gray-200">
+          <div className="mt-3 mb-2 pt-4 border-t border-gray-200">
             <p className="text-center text-gray-600 text-xs sm:text-sm">
               &copy; {new Date().getFullYear()} Code Legalist. All rights reserved.
             </p>
