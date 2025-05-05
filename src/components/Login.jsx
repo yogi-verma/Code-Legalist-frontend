@@ -208,6 +208,61 @@ const Login = ({ setIsAuthenticated, setToken }) => {
           </div>
         </div>
       </div>
+
+      <footer className="border-t border-gray-300 py-6 bg-gray-100 px-4 sm:px-6">
+              <div className="max-w-6xl mx-auto">
+                {/* Main footer content */}
+                <div className="flex flex-col md:flex-row justify-between items-center">
+                  {/* Left side - Branding */}
+                  <div className="text-center md:text-left mb-6 md:mb-0">
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-800">
+                      Code Legalist
+                    </h4>
+                    <p className="text-gray-600 mt-1 sm:mt-2 text-sm sm:text-base">
+                      Providing legal awareness and solutions for everyone
+                    </p>
+                  </div>
+      
+                  {/* Right side - Social media */}
+                  <div className="text-center md:text-right">
+                    <p className="text-gray-700 font-medium mb-2 text-sm sm:text-base">
+                      Follow us on social media
+                    </p>
+                    <div className="flex justify-center md:justify-end space-x-4 text-red-500">
+                      <a
+                        href="#"
+                        className="hover:text-red-700 transition-colors duration-200"
+                        aria-label="Facebook"
+                      >
+                        <FaFacebook size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
+                      </a>
+                      <a
+                        href="#"
+                        className="hover:text-red-700 transition-colors duration-200"
+                        aria-label="Twitter"
+                      >
+                        <FaTwitter size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
+                      </a>
+                      <a
+                        href="#"
+                        className="hover:text-red-700 transition-colors duration-200"
+                        aria-label="Instagram"
+                      >
+                        <FaInstagram size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+      
+                {/* Copyright */}
+                <div className="mt-6 pt-4 border-t border-gray-200">
+                  <p className="text-center text-gray-600 text-xs sm:text-sm">
+                    &copy; {new Date().getFullYear()} Chat Legalist. All rights
+                    reserved.
+                  </p>
+                </div>
+              </div>
+            </footer>
     </div>
   );
 };
