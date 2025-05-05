@@ -55,11 +55,11 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen bg-gray-100 flex flex-col">
       <ToastContainer />
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col justify-center px-4 py-6 sm:px-6 lg:px-8">
+      <div className="flex-grow flex flex-col justify-center px-4 py-6 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="text-center text-2xl md:text-3xl font-extrabold text-red-600">
             Create your account
@@ -191,44 +191,28 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
             </div>
           </div>
         </div>
-      </main>
+      </div>
 
       {/* Footer */}
-      <footer className="border-t border-gray-300 py-4 bg-gray-100 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-center md:text-left mb-6 md:mb-0">
-              <h4 className="text-lg sm:text-xl font-bold text-gray-800">
-                Code Legalist
-              </h4>
-              <p className="text-gray-600 mt-1 sm:mt-2 text-sm sm:text-base">
-                Providing legal awareness and solutions for everyone
-              </p>
-            </div>
-
-            <div className="text-center md:text-right">
-              <p className="text-gray-700 font-medium mb-2 text-sm sm:text-base">
-                Follow us on social media
-              </p>
-              <div className="flex justify-center md:justify-end space-x-4 text-red-500">
-                <a href="#" className="hover:text-red-700" aria-label="Facebook">
-                  <FaFacebook size={20} />
-                </a>
-                <a href="#" className="hover:text-red-700" aria-label="Twitter">
-                  <FaTwitter size={20} />
-                </a>
-                <a href="#" className="hover:text-red-700" aria-label="Instagram">
-                  <FaInstagram size={20} />
-                </a>
-              </div>
-            </div>
+      <footer className="bg-white border-t border-gray-200 py-6 mt-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-center md:text-left mb-4 md:mb-0">
+            <h4 className="text-lg font-bold text-gray-800">Code Legalist</h4>
+            <p className="text-sm text-gray-600">Providing legal awareness and solutions for everyone</p>
           </div>
 
-          <div className="mt-3 mb-2 pt-4 border-t border-gray-200">
-            <p className="text-center text-gray-600 text-xs sm:text-sm">
-              &copy; {new Date().getFullYear()} Code Legalist. All rights reserved.
-            </p>
+          <div className="text-center md:text-right">
+            <p className="text-sm text-gray-700 mb-2">Follow us on social media</p>
+            <div className="flex justify-center md:justify-end space-x-4 text-red-500">
+              <a href="#" aria-label="Facebook" className="hover:text-red-700"><FaFacebook size={20} /></a>
+              <a href="#" aria-label="Twitter" className="hover:text-red-700"><FaTwitter size={20} /></a>
+              <a href="#" aria-label="Instagram" className="hover:text-red-700"><FaInstagram size={20} /></a>
+            </div>
           </div>
+        </div>
+
+        <div className="mt-4 text-center text-xs text-gray-600">
+          &copy; {new Date().getFullYear()} Code Legalist. All rights reserved.
         </div>
       </footer>
     </div>
