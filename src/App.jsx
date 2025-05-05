@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
 import PostForm from "./components/PostForm";
+import News from "./components/News"; // Import the News component
 import { Toaster } from "react-hot-toast";
 
 function App() {
@@ -67,7 +68,22 @@ function App() {
             )
           }
         />
-        // Add this new route in your App.jsx
+        
+        {/* Protected Routes */}
+        <Route
+          path="/dashboard"
+          element={
+            isAuthenticated ? (
+              <Dashboard
+                token={token}
+                userData={userData}
+                setIsAuthenticated={handleLogout}
+              />
+            ) : (
+              <Navigate to="/" replace />
+            )
+          }
+        />
         <Route
           path="/dashboard/myposts"
           element={
@@ -82,12 +98,11 @@ function App() {
             )
           }
         />
-        {/* Protected Routes */}
         <Route
-          path="/dashboard"
+          path="/dashboard/news"
           element={
             isAuthenticated ? (
-              <Dashboard
+              <News
                 token={token}
                 userData={userData}
                 setIsAuthenticated={handleLogout}
@@ -107,6 +122,7 @@ function App() {
             )
           }
         />
+        
         {/* Catch-all route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
