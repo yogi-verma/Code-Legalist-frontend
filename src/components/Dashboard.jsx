@@ -16,6 +16,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import img from "../assets/img.png";
 import toast, { Toaster } from "react-hot-toast";
 import news from "../assets/news.jpg";
+import Rights from "./Rights"
 
 const API_BASE_URL = "https://code-legalist-backend.onrender.com";
 
@@ -488,7 +489,7 @@ const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
         )}
       </main>
 
-      <div className="bg-gradient-to-r from-red-100 to-rose-200 p-6 rounded-xl shadow-lg border border-red-200 flex flex-col my-8 mx-4 md:flex-row gap-6 transition-all hover:shadow-xl">
+      <div className="traveling-border-box bg-gradient-to-r from-red-50 to-rose-200 p-6 rounded-xl shadow-lg  flex flex-col my-8 mx-4 md:flex-row gap-6 transition-all hover:shadow-xl">
         {/* Image - Left Side */}
         <div className="flex-shrink-0 w-full md:w-64 h-48 overflow-hidden rounded-lg shadow-md">
           <img
@@ -543,6 +544,9 @@ const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
           </div>
         </div>
       </div>
+
+     
+      <Rights />
 
       {/* Footer */}
       <footer className="border-t border-gray-300 py-6 bg-gray-100 px-4 sm:px-6">

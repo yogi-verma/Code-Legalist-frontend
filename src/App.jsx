@@ -11,6 +11,7 @@ import Dashboard from "./components/Dashboard";
 import PostForm from "./components/PostForm";
 import News from "./components/News"; // Import the News component
 import { Toaster } from "react-hot-toast";
+import "./App.css";
 
 
 function App() {
