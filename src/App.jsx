@@ -12,6 +12,7 @@ import PostForm from "./components/PostForm";
 import News from "./components/News"; // Import the News component
 import { Toaster } from "react-hot-toast";
 
+
 function App() {
   // Check localStorage for existing token on initial load
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -40,6 +41,7 @@ function App() {
   return (
     <Router>
       <Toaster />
+      
       <Routes>
         {/* Public Routes */}
         <Route
