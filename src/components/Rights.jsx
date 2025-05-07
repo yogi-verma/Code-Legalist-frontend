@@ -45,7 +45,7 @@ const Rights = () => {
   }, []);
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8 py-10 bg-gradient-to-br from-gray-200 to-gray-400 my-9">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-10 bg-gradient-to-br from-gray-200 to-gray-400 mt-15">
       <div className="max-w-3xl mx-auto text-center mb-5">
         <h2 className="text-3xl md:text-4xl font-extrabold text-red-600 mb-2">
           Know Your <span className="text-gray-800">Rights</span>
