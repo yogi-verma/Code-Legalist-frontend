@@ -37,7 +37,7 @@ const Login = ({ setIsAuthenticated, setToken }) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-red-50 to-white">
+    <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-red-50 to-red-100">
       <ToastContainer />
 
       <main className="flex-grow flex items-center justify-center px-4 py-8 sm:px-6 lg:px-8">
@@ -145,7 +145,7 @@ const Login = ({ setIsAuthenticated, setToken }) => {
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-200 py-6">
+      <footer className="bg-gradient-to-br from-red-50 to-red-100 border-t border-gray-200 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold text-gray-800">Code Legalist</h4>

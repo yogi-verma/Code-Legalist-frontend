@@ -49,7 +49,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 to-red-100 flex flex-col">
       <ToastContainer />
 
       <div className="flex-grow flex flex-col justify-center px-4 py-8 sm:px-6 lg:px-8">
@@ -143,7 +143,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
         </div>
       </div>
 
-      <footer className="bg-white border-t border-gray-200 py-6 mt-10">
+      <footer className="bg-gradient-to-br from-red-50 to-red-100 border-t border-gray-200 py-6 mt-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-4 md:mb-0">
             <h4 className="text-lg font-bold text-gray-800">Code Legalist</h4>
