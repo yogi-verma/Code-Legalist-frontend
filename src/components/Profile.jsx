@@ -4,7 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const API_BASE_URL = "https://code-legalist-backend.onrender.com";
+const API_BASE_URL = "https://code-legalist-backend.vercel.app";
 
 const Profile = ({ setIsAuthenticated }) => {
   const [userData, setUserData] = useState(null);

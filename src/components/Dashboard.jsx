@@ -18,7 +18,7 @@ import toast, { Toaster } from "react-hot-toast";
 import news from "../assets/news.jpg";
 import Rights from "./Rights"
 
-const API_BASE_URL = "https://code-legalist-backend.onrender.com";
+const API_BASE_URL = "https://code-legalist-backend.vercel.app";
 
 const Dashboard = ({ token, setIsAuthenticated, view = "all" }) => {
   const [userData, setUserData] = useState(null);
