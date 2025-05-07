@@ -61,7 +61,7 @@ const Signup = ({ setIsAuthenticated, setToken }) => {
         </div>
 
         <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="bg-white py-6 px-4 shadow sm:rounded-lg sm:px-6 border-t-4 border-red-500">
+          <div className="bg-white shadow-lg rounded-xl p-6 sm:p-8 border-t-4 border-red-500">
             {error && (
               <div className="mb-4 bg-red-50 border-l-4 border-red-500 p-3 text-red-700 text-sm">
                 {error}
